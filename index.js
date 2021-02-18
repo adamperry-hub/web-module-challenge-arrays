@@ -49,7 +49,7 @@ function copy(array){
     return [...array]
 }    
 
-console.log('task1', copy(originalFlavors));
+console.log(copy(originalFlavors));
 
 
 
@@ -65,16 +65,15 @@ For Example: is31Flavors(originalFlavors) will return true if your code is worki
 
 
 function is31Flavors(array){
-   return [...array]
-}
+     console.log(array.length);
+     if (array.length === 31){
+        return true
+     }else {
+         return false
+     }
+}  
+is31Flavors(originalFlavors);
 
-var meals = ['breakfast', 'lunch', 'dinner', 'supper'];
-
-meals.every(function(item){ return item.length > 0 });
-// true
-
-meals.every(function(item){ return item.length > 6 });
-// false
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Corporate has come to you with an idea for a new flavor: Rainbow Sherbert! They think this will be a game changer. You need to modify the array to include this flavor. 
@@ -126,12 +125,13 @@ Use the getFlavorByIndex function below to do the following:
     For example: running getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully
 */
 
-function getFlavorByIndex(/*your code here*/){
-    /*your code here*/
-}
+function getFlavorByIndex(array, number){
+    let flavor = array[number]
+    return flavor;
+    }
 
-console.log(getFlavorByIndex(originalFlavors, 2)
-)
+console.log(getFlavorByIndex(originalFlavors, 2));
+
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 As corporate wants to add more and more flavors to their lineup, they've realized that they need to remove flavors based on flavor name, 
 as opposed to just arbitrarily removing the first or last flavor. Your task is to get an index by flavor name, and remove that single flavor from the array.  
@@ -148,11 +148,10 @@ Use the removeFlavorByName function below to do the following:
 */
 
 function removeFlavorByName(array, string){
-    for (let i = 0; i < array.length; i++){
-        if(array[i] === string){
+     let i = array.indexOf(string);
+        
             array.splice(i, 1);
-        }
-    }
+        
     return array;
 }
 
