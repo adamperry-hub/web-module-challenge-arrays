@@ -65,10 +65,16 @@ For Example: is31Flavors(originalFlavors) will return true if your code is worki
 
 
 function is31Flavors(array){
-   
+   return [...array]
 }
 
+var meals = ['breakfast', 'lunch', 'dinner', 'supper'];
 
+meals.every(function(item){ return item.length > 0 });
+// true
+
+meals.every(function(item){ return item.length > 6 });
+// false
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Corporate has come to you with an idea for a new flavor: Rainbow Sherbert! They think this will be a game changer. You need to modify the array to include this flavor. 
@@ -124,7 +130,8 @@ function getFlavorByIndex(/*your code here*/){
     /*your code here*/
 }
 
-
+console.log(getFlavorByIndex(originalFlavors, 2)
+)
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 As corporate wants to add more and more flavors to their lineup, they've realized that they need to remove flavors based on flavor name, 
 as opposed to just arbitrarily removing the first or last flavor. Your task is to get an index by flavor name, and remove that single flavor from the array.  
